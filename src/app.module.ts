@@ -8,12 +8,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: '127.0.0.1',
-      port: 3306,
-      username: 'root',
-      // password: 'quitam',
-      database: 'testconn',
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'quitam',
+      password: 'Abc12345sdsdsd6',
+      database: 'testtask',
       entities: [],
       synchronize: true,
       autoLoadEntities: true,

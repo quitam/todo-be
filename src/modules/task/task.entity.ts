@@ -8,6 +8,6 @@ export class Task {
   @Column()
   nametask: string;
 
-  @Column()
+  @Column({ nullable: true })
   desctask: string;
 }

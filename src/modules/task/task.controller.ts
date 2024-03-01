@@ -10,7 +10,7 @@ export class TaskController {
   constructor(private readonly taskService: TaskService) {}
 
   @Get('all-task')
-  async findAll(): Promise<Task[]> {
+  async findAll(): Promise<{ total: number; items: Task[] }> {
     return this.taskService.findAll();
   }
 

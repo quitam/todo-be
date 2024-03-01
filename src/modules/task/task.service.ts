@@ -10,8 +10,9 @@ export class TaskService {
     @InjectRepository(Task)
     private taskRepository: Repository<Task>,
   ) {}
-  async findAll(): Promise<Task[]> {
-    return await this.taskRepository.find();
+  async findAll(): Promise<{ total: number; items: Task[] }> {
+    const result = await this.taskRepository.findAndCount();
+    return { total: result[1], items: result[0] };
   }
 
   // Create Task
